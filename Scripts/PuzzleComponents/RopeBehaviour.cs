@@ -37,27 +37,16 @@ public class RopeBehaviour : MonoBehaviour
 
     public void Burn()
     {
-        //burn the object
+        /* 
+         * Instantiate object at certain location
+         * enable particle emitter
+         * start timer
+         * move object from start position to final position
+         * delete object
+         * update the puzzle manager that time has been completed.
+         * check if the puzzle was failed.
+         */
+
         
-        //print success
-        print("In Position, Papi");
-
-        // Distance moved equals elapsed time times speed..
-        float distCovered = (Time.time - startTime) * speed;
-
-        // Fraction of journey completed equals current distance divided by total distance.
-        float fractionOfJourney = distCovered / length;
-
-        // Set our position as a fraction of the distance between the markers.
-        firePrefab.transform.position = Vector3.Lerp(fireStartPos.position, fireEndPos.position, fractionOfJourney);
-
-        //print movement
-        print("I moved Papi");
-
-        if (distCovered == length)
-        {
-            print("finished moving papi");
-            Destroy(gameObject);
-        }
     }
 }

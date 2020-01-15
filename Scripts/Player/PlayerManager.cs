@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     
     public RopeBehaviour rope;
 
-    public float armLength = 2f;//kill me if you don't get it
+    public float armLength = 2f;//if you don't get it...
     [SerializeField] private Camera Camera;//camera to be used
     [SerializeField] private Vector3 respawnPos;//position to respawn in
     [SerializeField] private GameObject spawnPoint;//checkpoint gameobject
@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (hit.collider.tag == "Rope")
                 {
-                    print("Yeet, I found a rope  tag papi");
+                    print("Yeet, I found a rope tag papi");
                     rope = hit.collider.gameObject.GetComponent<RopeBehaviour>();
                     BurnRope();
                 }

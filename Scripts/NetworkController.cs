@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
-    void Start()
+    void Start()//on start
     {
         print("Connecting to server...");
         PhotonNetwork.NickName = MasterManager.GameSettings.NickName;
@@ -17,8 +16,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        print( "Now connected to " + PhotonNetwork.CloudRegion + " server!" );
-        print( "Player Nickname: " + PhotonNetwork.LocalPlayer.NickName );
+        print( "Your chosen region is " + PhotonNetwork.CloudRegion + "!" );
+        print( "Game version is set to " + PhotonNetwork.GameVersion );
+        print( "Player nickname chosen: " + PhotonNetwork.LocalPlayer.NickName );
     }
 
     public override void OnDisconnected(DisconnectCause cause)
